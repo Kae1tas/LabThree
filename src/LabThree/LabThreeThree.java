@@ -70,6 +70,7 @@ public class LabThreeThree {
     public static Node removeFirst(Node head) {
         return (head = head.next);
     }
+
     public static Node removeLast(Node head) {
         Node ref = head;
         while (ref.next.next != null) {
@@ -97,18 +98,20 @@ public class LabThreeThree {
         int h = sc.nextInt();
         System.out.println(createHead(h));
 
-        System.out.print("Введите длину списка:");
+        System.out.print("\nВведите длину списка:");
         int t = sc.nextInt();
         System.out.println(createTail(t));
 
-        System.out.println("Введите новую голову:");
+        System.out.print("\nВведите новую голову:");
         System.out.println(addFirst(createHead(h), new Node(sc.nextInt(), null)));
 
-        System.out.println("Введите новый хвост:");
+        System.out.print("\nВведите новый хвост:");
         System.out.println(addLast(createHead(h), new Node(sc.nextInt(), null)));
 
-        System.out.println("Введите значение элемента:");
+        /*/System.out.println("Введите значение элемента:");
         System.out.println(Insert(new Node(8, null), new Node(sc.nextInt(), null), 6));
+    /*/
+        System.out.println("\nУдаление 1-го элемента списка:\n" + removeFirst(createHead(h)));
 
 
     }
