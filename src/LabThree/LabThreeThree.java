@@ -22,11 +22,7 @@ class Node {
 }
 
 public class LabThreeThree {
-    static Node headS;
-    static Node tailS;
-
     public static Node createHead(int i) {
-        Scanner sc = new Scanner(System.in);
         Node head = null;
         for (; i > 0; i--) {
             head = new Node(i, head);
@@ -35,7 +31,6 @@ public class LabThreeThree {
     }
 
     public static Node createTail(int n) {
-        Scanner sc = new Scanner(System.in);
         Node head = new Node(0, null);
         Node tail = head;
         for (int i = 0; i < n - 1; i++) {
@@ -62,7 +57,7 @@ public class LabThreeThree {
             ref = ref.next;
             k++;
         }
-        newNode.next = newNode;
+        newNode.next = ref.next;
         ref.next = newNode;
         return head;
     }
@@ -83,7 +78,7 @@ public class LabThreeThree {
     public static Node Remove(Node head, int index) {
         Node ref = head;
         int k = 1;
-        while (ref.next != null && (k < index)) {
+        while (ref.next != null && (k < index - 1)) {
             ref = ref.next;
             k++;
         }
@@ -96,23 +91,27 @@ public class LabThreeThree {
 
         System.out.print("Введите длину списка:");
         int h = sc.nextInt();
-        System.out.println(createHead(h));
+        Node head = createHead(h);
+        System.out.println(head);
 
         System.out.print("\nВведите длину списка:");
         int t = sc.nextInt();
         System.out.println(createTail(t));
 
         System.out.print("\nВведите новую голову:");
-        System.out.println(addFirst(createHead(h), new Node(sc.nextInt(), null)));
+        System.out.println(addFirst(head, new Node(sc.nextInt(), null)));
 
         System.out.print("\nВведите новый хвост:");
-        System.out.println(addLast(createHead(h), new Node(sc.nextInt(), null)));
+        System.out.println(addLast(head, new Node(sc.nextInt(), null)));
 
-        /*/System.out.println("Введите значение элемента:");
-        System.out.println(Insert(new Node(8, null), new Node(sc.nextInt(), null), 6));
-    /*/
-        System.out.println("\nУдаление 1-го элемента списка:\n" + removeFirst(createHead(h)));
+        System.out.println("\nВведите значение элемента для вставки:");
+        System.out.println(Insert(head, new Node(sc.nextInt(), null), 6));
 
+        System.out.println("\nУдаление 1-го элемента списка:\n" + removeFirst(head));
 
+        System.out.println("\nУдаление последнего элемента списка:\n" + removeLast(head));
+
+        System.out.println("\nВведите значение элемента для удаления:");
+        System.out.println(Remove(head, sc.nextInt()));
     }
 }
