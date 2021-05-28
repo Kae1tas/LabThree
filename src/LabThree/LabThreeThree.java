@@ -22,7 +22,11 @@ class Node {
 }
 
 public class LabThreeThree {
+    static Node headS;
+    static Node tailS;
+
     public static Node createHead(int i) {
+        Scanner sc = new Scanner(System.in);
         Node head = null;
         for (; i > 0; i--) {
             head = new Node(i, head);
@@ -31,13 +35,14 @@ public class LabThreeThree {
     }
 
     public static Node createTail(int n) {
+        Scanner sc = new Scanner(System.in);
         Node head = new Node(0, null);
         Node tail = head;
         for (int i = 0; i < n - 1; i++) {
             tail.next = new Node(i + 1, null);
             tail = tail.next;
         }
-        return tail;
+        return head;
     }
 
     public static Node addFirst(Node oldHead, Node newHead) {
@@ -92,26 +97,26 @@ public class LabThreeThree {
         System.out.print("Введите длину списка:");
         int h = sc.nextInt();
         Node head = createHead(h);
-        System.out.println(head);
+        System.out.println(createHead(h));
 
         System.out.print("\nВведите длину списка:");
         int t = sc.nextInt();
         System.out.println(createTail(t));
 
         System.out.print("\nВведите новую голову:");
-        System.out.println(addFirst(head, new Node(sc.nextInt(), null)));
+        System.out.println(addFirst(createHead(h), new Node(sc.nextInt(), null)));
 
         System.out.print("\nВведите новый хвост:");
-        System.out.println(addLast(head, new Node(sc.nextInt(), null)));
+        System.out.println(addLast(createHead(h), new Node(sc.nextInt(), null)));
 
         System.out.println("\nВведите значение элемента для вставки:");
-        System.out.println(Insert(head, new Node(sc.nextInt(), null), 6));
+        System.out.println(Insert(createHead(h), new Node(sc.nextInt(), null), 6));
 
-        System.out.println("\nУдаление 1-го элемента списка:\n" + removeFirst(head));
+        System.out.println("\nУдаление 1-го элемента списка:\n" + removeFirst(createHead(h)));
 
-        System.out.println("\nУдаление последнего элемента списка:\n" + removeLast(head));
+        System.out.println("\nУдаление последнего элемента списка:\n" + removeLast(createHead(h)));
 
         System.out.println("\nВведите значение элемента для удаления:");
-        System.out.println(Remove(head, sc.nextInt()));
+        System.out.println(Remove(createHead(h), sc.nextInt()));
     }
 }
