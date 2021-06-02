@@ -26,7 +26,6 @@ public class LabThreeThree {
     static Node tailS;
 
     public static Node createHead(int i) {
-        Scanner sc = new Scanner(System.in);
         Node head = null;
         for (; i > 0; i--) {
             head = new Node(i, head);
@@ -35,7 +34,6 @@ public class LabThreeThree {
     }
 
     public static Node createTail(int n) {
-        Scanner sc = new Scanner(System.in);
         Node head = new Node(0, null);
         Node tail = head;
         for (int i = 0; i < n - 1; i++) {
