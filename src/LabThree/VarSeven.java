@@ -39,7 +39,7 @@ public class VarSeven {
             index++;
             if (ref.value > valueMax) {
                 valueMax = ref.value;
-                indexMax++;
+                indexMax = index;
             }
             System.out.println(valueMax);
             ref = ref.next;
