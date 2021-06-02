@@ -16,6 +16,7 @@ public class LabThreeRec {
         if (i < n) {
             tail.next = new Node(i + 1, null);
             tail = tail.next;
+            System.out.println(tail);
             return createTailRec(tail, n, i + 1);
         }
         return tail;
