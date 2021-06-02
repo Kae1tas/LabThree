@@ -30,6 +30,21 @@ public class VarSeven {
         System.out.println("Сумма:" + sum + "\nКоличество:" + k + "\nСреднее значение:" + average);
     }
 
+    public static void findIndexMaxAndValue (Node head, int n) {
+        Node ref = head;
+        int indexMax = n;
+        int valueMax = head.value;
+        while(ref.next != null) {
+            System.out.println(valueMax);
+            if (ref.value > valueMax) {
+                valueMax = ref.value;
+            }
+            indexMax--;
+            ref = ref.next;
+        }
+        System.out.println("Номер:" + indexMax + "\nЧисло:" + valueMax);
+    }
+
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -39,6 +54,7 @@ public class VarSeven {
         System.out.println(head);
 
         sumAndAverage(head);
+        findIndexMaxAndValue(head, n);
 
 
     }
