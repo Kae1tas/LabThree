@@ -22,6 +22,9 @@ public class VarSeven {
                 sum = sum + ref.value;
                 ref = ref.next;
             }
+            else {
+                ref = ref.next;
+            }
         }
         double average = (double)sum/k;
         System.out.println("Сумма:" + sum + "\nКоличество:" + k + "\nСреднее значение:" + average);
