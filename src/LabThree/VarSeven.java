@@ -32,14 +32,16 @@ public class VarSeven {
 
     public static void findIndexMaxAndValue (Node head, int n) {
         Node ref = head;
-        int indexMax = n;
+        int indexMax = 0;
         int valueMax = head.value;
-        while(ref.next != null) {
-            System.out.println(valueMax);
+        int index = 0;
+        while(ref != null) {
+            index++;
             if (ref.value > valueMax) {
                 valueMax = ref.value;
+                indexMax++;
             }
-            indexMax--;
+            System.out.println(valueMax);
             ref = ref.next;
         }
         System.out.println("Номер:" + indexMax + "\nЧисло:" + valueMax);
